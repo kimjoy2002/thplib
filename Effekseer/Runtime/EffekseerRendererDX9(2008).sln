@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EffekseerRendererDX9(2008)", ".\EffekseerRendererDX9\EffekseerRendererDX9.vcproj", "{AEB43F49-6931-4EC5-AE90-B913C88515B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEB43F49-6931-4EC5-AE90-B913C88515B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AEB43F49-6931-4EC5-AE90-B913C88515B9}.Debug|Win32.Build.0 = Debug|Win32
+		{AEB43F49-6931-4EC5-AE90-B913C88515B9}.Release|Win32.ActiveCfg = Release|Win32
+		{AEB43F49-6931-4EC5-AE90-B913C88515B9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

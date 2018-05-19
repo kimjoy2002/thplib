@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="EffekseerRenderer">
+      <UniqueIdentifier>{43ddea41-d59a-46da-8052-75fafb38ca6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EffekseerRendererCommon">
+      <UniqueIdentifier>{78d0391b-4390-43ef-b616-5dde6c474cd3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.Base.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.DeviceObject.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.IndexBuffer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.Renderer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RibbonRenderer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RibbonRenderer.Shader.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RibbonRenderer.ShaderNoTexture.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.Shader.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.SpriteRenderer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.SpriteRenderer.Shader.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.SpriteRenderer.ShaderNoTexture.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.VertexBuffer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.TextureLoader.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.Base.Pre.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RendererImplemented.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRendererDX9.h" />
+    <ClInclude Include="..\EffekseerRendererCommon\EffekseerRenderer.IndexBufferBase.h">
+      <Filter>EffekseerRendererCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EffekseerRendererCommon\EffekseerRenderer.VertexBufferBase.h">
+      <Filter>EffekseerRendererCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RingRenderer.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RingRenderer.Shader.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="EffekseerRenderer\EffekseerRenderer.RingRenderer.ShaderNoTexture.h">
+      <Filter>EffekseerRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.DeviceObject.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.IndexBuffer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.Renderer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.RibbonRenderer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.Shader.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.SpriteRenderer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.VertexBuffer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.TextureLoader.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EffekseerRendererCommon\EffekseerRenderer.VertexBufferBase.cpp">
+      <Filter>EffekseerRendererCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EffekseerRendererCommon\EffekseerRenderer.IndexBufferBase.cpp">
+      <Filter>EffekseerRendererCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="EffekseerRenderer\EffekseerRenderer.RingRenderer.cpp">
+      <Filter>EffekseerRenderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

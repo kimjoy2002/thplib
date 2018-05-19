@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaHelper", "LuaHelper.vcproj", "{0CE12956-75CD-4878-AF34-771EF39174AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Unicode|Win32 = Debug_Unicode|Win32
+		Debug|Win32 = Debug|Win32
+		Release_Unicode|Win32 = Release_Unicode|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Debug_Unicode|Win32.ActiveCfg = Debug_Unicode|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Debug_Unicode|Win32.Build.0 = Debug_Unicode|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Debug|Win32.Build.0 = Debug|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Release_Unicode|Win32.ActiveCfg = Release_Unicode|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Release_Unicode|Win32.Build.0 = Release_Unicode|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Release|Win32.ActiveCfg = Release|Win32
+		{0CE12956-75CD-4878-AF34-771EF39174AB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

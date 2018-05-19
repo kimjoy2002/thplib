@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="util">
+</Property><Property Name="ソリューション ファイル" Value="C:\prg\VS\lib\util\util.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="C:\prg\VS\lib\util\util.suo">
+</Property><Property Name="Date" Value="2010年4月29日">
+</Property><Property Name="Time" Value="13:04">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="util.sln" Description="ファイルは正常に C:\prg\VS\lib\util\util.sln.old としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="util.suo" Description="ファイルは正常に C:\prg\VS\lib\util\util.suo.old としてバックアップされました。">
+</Event><Event ErrorLevel="3" Project="util" Source="util.vcxproj" Description="変換の必要なし">
+</Event><Event ErrorLevel="0" Project="" Source="util.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="util.sln" Description="Converted">
+</Event></UpgradeLog>
