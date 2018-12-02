@@ -9101,6 +9101,7 @@ CDXUTMeter::CDXUTMeter( CDXUTDialog *pDialog)
 
 	m_nMaxValue = 0;
 	m_nValue = 0;
+	m_fValue = 0.0f;
 	SetRectEmpty(&m_rcValue);
 
     for( int i=0; i < m_Elements.GetSize(); i++ )
@@ -9121,7 +9122,7 @@ void CDXUTMeter::UpdateRects()
 	int nMax = 0;
 	int nWidth = 0;
 	int nHeight = 0;
-	float fp = m_nValue?((float)m_nValue / (float)m_nMaxValue):0.0f;
+	float fp = m_nValue?((float)m_fValue / (float)m_nMaxValue):0.0f;
     CDXUTElement* pElement = m_Elements.GetAt( 1 );
 
 	switch (m_eMeterStyle)

@@ -970,25 +970,38 @@ public:
 	int GetMaxValue()	{ return m_nMaxValue;	};
 	void SetMaxValue(int value) {m_nMaxValue = value; CheckCaps(); UpdateRects(); };
 	int GetValue() { return m_nValue;	};
-	void SetValue(int value) {m_nValue = value; CheckCaps(); UpdateRects(); };
+	float GetFloatValue() { return m_fValue; };
+	void SetValue(int value) {
+		m_fValue = (float)value;
+		m_nValue = value; 
+		CheckCaps();
+		UpdateRects();
+	};
+	void SetFloatValue(float value) {
+		m_fValue = value;
+		m_nValue = (int)value;
+		CheckCaps();
+		UpdateRects();
+	};
 	
 	void SetMargin(int w, int h) { m_nMarginW = w; m_nMarginH = h; UpdateRects(); };
 	void GetMargin(SIZE *sz) { sz->cx = m_nMarginW; sz->cy = m_nMarginH; };
 
-	void SetMeterStyle(E_METER_STYLE value)
-	{
+	void SetMeterStyle(E_METER_STYLE value) {
 		m_eMeterStyle = value;
 		UpdateRects();
 	};
 protected:
-	void CheckCaps()
-	{
-		if (m_nMaxValue < m_nValue)
+	void CheckCaps() {
+		if (m_nMaxValue < m_nValue) {
+			m_fValue = (float)m_nMaxValue;
 			m_nValue = m_nMaxValue;
+		}
 	};
 
     int m_nMaxValue;
 	int m_nValue;
+	float m_fValue;
 	int m_nMarginW;
 	int m_nMarginH;
 
