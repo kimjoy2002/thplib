@@ -2,7 +2,7 @@
 #define H_SOUND_PLAYER_CLASS___
 // ===================================================================
 // CSoundAdministrator.h
-//	音管理クラス・ヘッダー
+//	音管理クラス・ヘッ??
 // ===================================================================
 
 #include <windows.h>
@@ -17,7 +17,7 @@
 #include <vector>
 #include "DXUTsound.h"
 
-#include <Dxerr9.h>
+#include <Dxerr.h>
 
 //#include "define.h"
 #include "util.h"
@@ -49,7 +49,7 @@ public:
 	// DirectX help参照
 	virtual HRESULT SetPrimaryBufferFormat( EDirectSoundBufferFormat fmt=DSBufFmt_Default );
 	/**
-		Play 永遠ループ：dwLoopCount=SOUNDLIB_ENDLESSLOOP
+		Play 永遠ル?プ：dwLoopCount=SOUNDLIB_ENDLESSLOOP
 	*/
 	virtual INT PlaySoundBuffer(PSoundBuffer pSoundBuffer,BYTE bytVolume=0xFF , DWORD dwLoopCount=0, int fade=0);
 
@@ -72,8 +72,8 @@ public:
 	virtual void ClearPlayingList();
 protected:
 
-	DWORD				m_dwIDCounter;		// ユニークなID番号を得るための数値
-										// ※フローは考えない
+	DWORD				m_dwIDCounter;		// ユニ?クなID番号を得るための数値
+										// ※フロ?は考えない
 										// ※0番は使用しない
 	LPDIRECTSOUND8	m_pDS;
 //	CLinkageList*	m_pPlayingList;

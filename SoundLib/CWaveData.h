@@ -2,7 +2,7 @@
 #define H_WAVE_DATA_CLASS___
 // ===================================================================
 // CWaveData.h
-//	Waveデータクラス・ヘッダー
+//	Waveデ??クラス・ヘッ??
 // ===================================================================
 #include "util.h"
 
@@ -11,7 +11,7 @@
 #include <mmsystem.h>
 #include <mmreg.h>
 #include <dsound.h>
-#include <dxerr9.h>
+#include <dxerr.h>
 
 struct TWAVEHEADER
 {
@@ -40,7 +40,7 @@ struct TWAVEHEADER
 
 //-----------------------------------------------------------------------------
 // Name: class CWaveData
-// Desc: WAVファイルを読み込み、メモリを保持しておくクラス
+// Desc: WAVフ?イルを読み込み、メモリを保持しておくクラス
 //-----------------------------------------------------------------------------
 class CWaveData
 {
@@ -48,10 +48,10 @@ public:
 	CWaveData();
 	virtual ~CWaveData();
 
-	// ファイルから読み込み
+	// フ?イルから読み込み
 	virtual BOOL LoadFromFile(const TCHAR* path);
 
-	// 開いているファイルポインタから読み込み
+	// 開いているフ?イル?イン?から読み込み
 	virtual BOOL Load(FILE* fh, DWORD size);
 
 	// メモリから読み込み
@@ -67,13 +67,13 @@ public:
 	DWORD	GetDataSize()
 	{	return m_dwDataSize;	};
 
-	// メモリコピー
+	// メモリコピ?
 	virtual BOOL MemoryCopy(DWORD dwSrcOffset, void* pDest, DWORD *dwMaxSize);
 
 protected:
-	BYTE*	m_pMemory;				// 読み込んだデータ
-	DWORD	m_dwDataSize;			// データサイズ
-	WAVEFORMATEX m_tWaveFormat;	// フォーマット
+	BYTE*	m_pMemory;				// 読み込んだデ??
+	DWORD	m_dwDataSize;			// デ??サイズ
+	WAVEFORMATEX m_tWaveFormat;	// フォ??ット
 
 };
 
