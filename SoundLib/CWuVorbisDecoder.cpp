@@ -1,7 +1,7 @@
 
 #include "CWuVorbisDecoder.h"
 
-/*static */unsigned int CWuVorbisDecoder::WuVorbisInitialize(const TCHAR *dll_file_name_can_be_null, __int32 *cputype)
+/*static */unsigned int CWuVorbisDecoder::WuVorbisInitialize(const char *dll_file_name_can_be_null, __int32 *cputype)
 {
 	int ret = 3;
 	if(ret = WuVorbisInit(dll_file_name_can_be_null))
@@ -16,18 +16,18 @@
 /*static */int CWuVorbisDecoder::WuVorbisFinalize()
 {
 	// WuVorbis を終了
-	// 通常 Windows はアプリケーション終了時に自動的に DLL を解放するので
+	// 通常 Windows はアプリケ?ション終了時に自動的に DLL を解放するので
 	// これは必要ないかも。。。
 	return WuVorbisUninit();
 }
 
 CWuVorbisDecoder::CWuVorbisDecoder():CWaveData()
 {
-	// フォーマット
+	// フォ??ット
 	ZeroMemory(&m_tWaveFormat, sizeof(WAVEFORMATEX));
-	// 読み込んだデータ
+	// 読み込んだデ??
 	m_pMemory = NULL;
-	// データサイズ
+	// デ??サイズ
 	m_dwDataSize = 0;	
 	m_dwCursor = 0;
 }
@@ -36,7 +36,7 @@ CWuVorbisDecoder::~CWuVorbisDecoder()
 {
     Close();
 }
-// 自身のポインタ
+// 自身の?イン?
 CWuVorbisDecoder* CWuVorbisDecoder::GetThis( void* stream )
 {
 	CWuVorbisDecoder *p = NULL;
@@ -51,13 +51,13 @@ size_t __cdecl CWuVorbisDecoder::cb_read_func( void *ptr, size_t size, size_t nm
 	return fread(ptr, size, nmemb, (FILE*)datasource);
 }
 
-// メモリシーク
+// メモリシ?ク
 int __cdecl CWuVorbisDecoder::cb_seek_func( void *datasource, wu_ogg_int64_t offset, int whence)
 {
 	return fseek((FILE*)datasource, (long)offset, whence);
 }
 
-// メモリクローズ
+// メモリクロ?ズ
 int __cdecl CWuVorbisDecoder::cb_close_func( void *datasource)
 {
 	return fclose((FILE*)datasource);
@@ -76,7 +76,7 @@ BOOL CWuVorbisDecoder::Close()
 	return CWaveData::Close();
 }
 
-// 開いているファイルポインタから読み込み
+// 開いているフ?イル?イン?から読み込み
 BOOL CWuVorbisDecoder::Load(FILE* fh, DWORD size)
 {
 	// 前のメモリを破棄
@@ -89,19 +89,19 @@ BOOL CWuVorbisDecoder::Load(FILE* fh, DWORD size)
 	wu_OggVorbis_File ovfile;
 
 	WuVorbisInit(NULL);
-	// コールバック関数のセットアップ
+	// コ?ルバック関数のセットアップ
 	wu_ov_callbacks callbacks = {cb_read_func, cb_seek_func, cb_close_func, cb_tell_func};
 
 	if(wu_ov_open_callbacks((void*)fh, &ovfile, NULL, 0, callbacks) < 0)
 	{
-		// ファイルを正常に開けない
+		// フ?イルを正常に開けない
 		fclose(fh);
 		WuVorbisUninit();
 		MessageBox(NULL, _T("vorbis file decode error"),_T("Cannot open (in ov_open_callbacks)\n"), MB_OK);
 		return FALSE;
 	}
 
-	// 情報を表示
+	// 情報を?示
 	wu_vorbis_info *info = wu_ov_info(&ovfile, -1);
 
 	if(!info)
@@ -115,15 +115,15 @@ BOOL CWuVorbisDecoder::Load(FILE* fh, DWORD size)
 
 	int nPCMBytes = (int)wu_ov_pcm_total(&ovfile, -1);
 
-	// デコードしてみる
-	// デコードデータメモリ作成
+	// デコ?ドしてみる
+	// デコ?ドデ??メモリ作成
 	int	nWaveSize = nPCMBytes;
 	void *pwave = (void*)malloc(nPCMBytes);
 	void *ptemp;
 	char *ppos = (char*)pwave;
 	int	nDecSize = 0;
 	int nDecTotal = 0;
-	// このテストプログラムが出力するデコード結果は raw pcm なので注意
+	// このテストプログラ?が出力するデコ?ド結果は raw pcm なので注意
 	int section = -1;
 	BOOL ret = TRUE;
 	while(true)
@@ -135,14 +135,14 @@ BOOL CWuVorbisDecoder::Load(FILE* fh, DWORD size)
 		// signed は 1 の必要がある
 		int res = wu_ov_read(&ovfile, buf, buf_size, 0, 2, 1, &section);
 		// wu_ov_read は要求されたサイズを満たさずに帰る場合があるので注意。
-		// 0 が戻ればデコード終了、正の数が戻れば
-		// デコード成功(戻り値は書き込まれたバイト数)、
-		// 負の数が戻った場合はパケット不足でデコードできない等。
-		//  (ネットワークからのストリーミングとかでなくてもこの状況は発生する)
+		// 0 が戻ればデコ?ド終了、正の数が戻れば
+		// デコ?ド成功(戻り値は書き込まれたバイト数)、
+		// 負の数が戻った場合はパケット不足でデコ?ドできない等。
+		//  (ネットワ?クからのストリ??ングとかでなくてもこの状況は発生する)
 		// 負の数が戻った場合は、読み取れるようになるまで
 		// そのまま wu_ov_read を繰り返せばよい
 
-		if(res == 0) break; // デコード終了
+		if(res == 0) break; // デコ?ド終了
 		if(res > 0)
 		{
 			// 領域拡張
@@ -165,7 +165,7 @@ BOOL CWuVorbisDecoder::Load(FILE* fh, DWORD size)
 		}
 	}
 
-	// wu_ov_clear で ovfile 構造体をクリア
+	// wu_ov_clear で ovfile ?造体をクリア
 	wu_ov_clear(&ovfile);
 
 	if (ret)
@@ -195,7 +195,7 @@ BOOL CWuVorbisDecoder::LoadFromMemory(BYTE *pbData, DWORD dwDataSize)
 	if (!dwDataSize)
 		return FALSE;
 
-	// メモリ作成 (自身のポインタ+ファイル)
+	// メモリ作成 (自身の?イン?+フ?イル)
 	
 //	BYTE *pmem = new BYTE[/*dwDataSize+*/sizeof(COggDecoder)];
 /*
@@ -207,13 +207,13 @@ BOOL CWuVorbisDecoder::LoadFromMemory(BYTE *pbData, DWORD dwDataSize)
 
 	m_dwDataSize = dwDataSize;
 
-	// メモリをコピー
+	// メモリをコピ?
 	if (!SafeMemCopy((char*)m_pMemory, pbData, dwDataSize, dwDataSize))
 		return FALSE;
 
 	OggVorbis_File tOggFile;
 	
-	// コールバック用変数
+	// コ?ルバック用変数
 	ov_callbacks callbacks;
 	callbacks.read_func = COggDecoder::ogg_read;
 	callbacks.seek_func = COggDecoder::ogg_seek;
@@ -233,11 +233,11 @@ BOOL CWuVorbisDecoder::LoadFromMemory(BYTE *pbData, DWORD dwDataSize)
 	
 	vi = ov_info(&tOggFile,-1);
 
-	// デコードデータサイズ
+	// デコ?ドデ??サイズ
 //	if (!dwWaveSize)
 //		return FALSE;
 
-	// デコードデータメモリ作成
+	// デコ?ドデ??メモリ作成
 	void *pwave = (void*)malloc(dwDataSize);
 	void *ptemp;
 	char *ppos = (char*)pwave;
@@ -247,7 +247,7 @@ BOOL CWuVorbisDecoder::LoadFromMemory(BYTE *pbData, DWORD dwDataSize)
 	int	nDecSize = 0;
 	int nDecTotal = 0;
 
-	// デコード
+	// デコ?ド
 	do
 	{
 		ret = ov_read(&tOggFile, dec_data, 4096, 0,2,1, &current_section);

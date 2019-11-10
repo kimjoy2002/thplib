@@ -27,7 +27,7 @@ public:
 		  wuvorbis.dll Ç≈ÇÕÇ»Ç¢
 	  3 : DLL Ç∆ wuvorbisfile ÇÃä‘Ç≈ïsêÆçáÇ™î≠ê∂ÇµÇΩ
 	*/
-	static unsigned int WuVorbisInitialize(const TCHAR *dll_file_name_can_be_null=NULL, __int32 *cputype=NULL);
+	static unsigned int WuVorbisInitialize(const char *dll_file_name_can_be_null=NULL, __int32 *cputype=NULL);
 	static int WuVorbisFinalize();
 
 	// é©êgÇÃ?ÉCÉì?
