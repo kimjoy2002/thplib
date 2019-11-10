@@ -2,7 +2,7 @@
 #define H_OGG_DECORDER_CLASS___
 // ===================================================================
 // COggDecoder.h
-//	OGGデコードクラス・ヘッダー
+//	OGGデコ?ドクラス・ヘッ??
 // ===================================================================
 
 #include "util.h"
@@ -22,21 +22,21 @@ public:
 	COggDecoder();
 	~COggDecoder();
 
-	// 自身のポインタ
+	// 自身の?イン?
 	static COggDecoder* __cdecl GetThis( void* stream );
 	// メモリから読み込み
 	static size_t __cdecl ogg_read( void* buffer, size_t size, size_t maxCount, void* stream );
 	// メモリ市0区
 	static int __cdecl ogg_seek( void* buffer, ogg_int64_t offset, int flag );
-	// メモリクローズ
+	// メモリクロ?ズ
 	static int __cdecl ogg_close( void* buffer );
 	// メモリ位置
 	static long __cdecl ogg_tell( void* buffer );
 
-//	// ファイルから読み込み
+//	// フ?イルから読み込み
 	BOOL LoadFromFile(const TCHAR* path);
 
-//	// 開いているファイルポインタから読み込み
+//	// 開いているフ?イル?イン?から読み込み
 	BOOL Load(FILE* fh, DWORD size);
 
 	// ↓失敗する
@@ -46,12 +46,12 @@ public:
 	// 読み込んだメモリを破棄
 	BOOL Close();
 	
-	// メモリコピー
+	// メモリコピ?
 	BOOL MemoryCopy(DWORD dwSrcOffset, void* pDest, DWORD *dwMaxSize);
 protected:
-//	BYTE*	m_pMemory;				// 読み込んだデータ
-//	DWORD	m_dwDataSize;			// データサイズ
-//	WAVEFORMATEX m_tWaveFormat;		// フォーマット
+//	BYTE*	m_pMemory;				// 読み込んだデ??
+//	DWORD	m_dwDataSize;			// デ??サイズ
+//	WAVEFORMATEX m_tWaveFormat;		// フォ??ット
 
 	BOOL MakeWaveFormat(WAVEFORMATEX *wave_fmt, vorbis_info* vi);
 
@@ -61,7 +61,7 @@ protected:
 /* 親
 //-----------------------------------------------------------------------------
 // Name: class CWaveData
-// Desc: WAVファイルを読み込み、メモリを保持しておくクラス
+// Desc: WAVフ?イルを読み込み、メモリを保持しておくクラス
 //-----------------------------------------------------------------------------
 class CWaveData
 {
@@ -69,16 +69,16 @@ public:
 	CWaveData();
 	~CWaveData();
 
-	// ファイルから読み込み
+	// フ?イルから読み込み
 	BOOL FileOpen(const char* path);
 
-	// 開いているファイルポインタから読み込み
+	// 開いているフ?イル?イン?から読み込み
 	BOOL Open(FILE* fh, DWORD size);
 
 	// メモリから読み込み
 	BOOL OpenFromMemory(BYTE *pbData, DWORD dwDataSize);
 
-	// メモリからコピー
+	// メモリからコピ?
 	BOOL OpenFromMemoryCopy(BYTE *pbData, DWORD dwDataSize);
 
 	// 読み込んだメモリを破棄
@@ -87,9 +87,9 @@ public:
 
 
 protected:
-	WAVEFORMATEX m_tWaveFormat;		// フォーマット
-	BYTE*	m_pMemory;				// 読み込んだデータ
-	DWORD	m_dwDataSize;			// データサイズ
+	WAVEFORMATEX m_tWaveFormat;		// フォ??ット
+	BYTE*	m_pMemory;				// 読み込んだデ??
+	DWORD	m_dwDataSize;			// デ??サイズ
 
 };
 */
