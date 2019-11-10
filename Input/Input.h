@@ -2,7 +2,7 @@
 #define H_CLASS_INPUT___
 // ===================================================================
 // CInput.h
-//	DirextInput管理クラス・ヘッダー
+//	DirextInput管理クラス・ヘッ??
 // ===================================================================
 
 #include "util.h"
@@ -13,13 +13,13 @@
 #include <d3dx9.h>
 
 #include <dinput.h>
-#include <Dxerr9.h>
+#include <Dxerr.h>
 
 #ifndef	DIRECTINPUT_VERSION
 #define DIRECTINPUT_VERSION	0x0800
 #endif
 
-#define DIDEVICE_BUFFERSIZE	100						// デバイスに設定するバッファ・サイズ
+#define DIDEVICE_BUFFERSIZE	100						// デバイスに設定するバッフ?・サイズ
 #define MAX_BUTTON	(9)
 #define MAX_KEY_STT	(256)
 #define KEY_CONT_ON	(600)
@@ -42,7 +42,7 @@
 //#define MAX_BUTTON		9
 #define MAX_KEY			4
 
-// メッセージ関数の定義
+// メッセ?ジ関数の定?
 //LRESULT CALLBACK MainWndProc(HWND hWnd,UINT msg,UINT wParam,LONG lParam);
 
 enum EInputType {
@@ -51,7 +51,7 @@ enum EInputType {
 	eITKeyboard = 0x02,
 };
 
-// KeyCodeとコントロールの対応
+// KeyCodeとコントロ?ルの対応
 struct TRelKeyCode {
 	BYTE	up;
 	BYTE	down;
@@ -60,7 +60,7 @@ struct TRelKeyCode {
 	BYTE	buttons[MAX_BUTTON];
 };
 
-// Joystickとコントロールの対応
+// Joystickとコントロ?ルの対応
 struct TRelJoystick {
 	LONG	lX;
 	LONG	lY;
@@ -130,14 +130,14 @@ protected:
 	LPDIRECTINPUT8			pDInput;			// DirectInput
 	LPDIRECTINPUTDEVICE8	pDIJoyDevice;		// DirectInputデバイス
 	LPDIRECTINPUTDEVICE8	pDIKeyDevice;		// DirectInputデバイス
-	DIDEVCAPS				diDevCaps;			// ジョイスティックの能力
+	DIDEVCAPS				diDevCaps;			// ジョイスティックの?力
 
 	BOOL	bActive;
 	int			nContOnMin;
 };
 
 // -------------------------------------------------------------------
-// ゲームコントロール・クラス
+// ゲ??コントロ?ル・クラス
 // -------------------------------------------------------------------
 
 class CGameControl : public CInput

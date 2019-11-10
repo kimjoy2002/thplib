@@ -4387,7 +4387,7 @@ LRESULT CALLBACK DXUTStaticWndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
                             pd3dDevice->SetRenderState( D3DRS_FILLMODE, (bWireFrame) ? D3DFILL_WIREFRAME : D3DFILL_SOLID ); 
                         break;
                     }
-/* 20110119 ESCで終了を抑える
+/* 20110119 ESCで終了を?える
                     case VK_ESCAPE:
                     {
                         // Received key to exit app
@@ -5695,10 +5695,10 @@ HRESULT DXMyMessageLoop( HACCEL hAccel )
 //    HWND hWnd = DXUTGetHWND();
     // Now we're ready to receive and process Windows messages.
     MSG  msg;
-    /* メッセージループ */
+    /* メッセ?ジル?プ */
     while (GetMessage(&msg, NULL, 0, 0))
     {
-        TranslateMessage(&msg); // キーボード利用を可能にする
+        TranslateMessage(&msg); // キ???ド利用を可?にする
         DispatchMessage(&msg);  // 制御をWindowsに戻す
     }
 	return S_OK;
@@ -5753,9 +5753,9 @@ HRESULT DXMyDrawLoop( DWORD dwDrawRate, HACCEL hAccel )
     }
 
     // Now we're ready to receive and process Windows messages.
-	// メッセージループ
-	timeBeginPeriod(1);											// タイマーの精度を1msにする
-	DWORD dwLastTickR = 0;									// 最後の更新時刻をゼロとする
+	// メッセ?ジル?プ
+	timeBeginPeriod(1);											// ?イ??の精度を1msにする
+	DWORD dwLastTickR = 0;									// 最後の更新時刻を?ロとする
 
     MSG  msg;
     msg.message = WM_NULL;
@@ -5766,7 +5766,7 @@ HRESULT DXMyDrawLoop( DWORD dwDrawRate, HACCEL hAccel )
 		DWORD dwNowTick = timeGetTime();					// 現在時刻の取得
 		//>> Draw
 		if (dwNowTick - dwLastTickR >= dwDrawRate)
-		{													// 指定時間異常経過ならゲーム処理開始
+		{													// 指定時間異常経過ならゲ??処理開始
 			DXMyRender3DEnvironment();
 			dwLastTickR = dwNowTick;				// 現在の時間を最後に更新した時間として
 		}
@@ -5779,7 +5779,7 @@ HRESULT DXMyDrawLoop( DWORD dwDrawRate, HACCEL hAccel )
     if( hAccel != NULL )
         DestroyAcceleratorTable( hAccel );
 
-	timeEndPeriod(1);										// タイマーの精度を戻す
+	timeEndPeriod(1);										// ?イ??の精度を戻す
 
     GetDXUTState().SetInsideDrawloop( false );
 	if (!GetDXUTState().GetInsideFrameloop())
@@ -5841,9 +5841,9 @@ HRESULT DXMyFrameLoop( DWORD dwRunRate, HACCEL hAccel )
     }
 
     // Now we're ready to receive and process Windows messages.
-	// メッセージループ
-	timeBeginPeriod(1);											// タイマーの精度を1msにする
-	DWORD dwLastTickR = 0;									// 最後の更新時刻をゼロとする
+	// メッセ?ジル?プ
+	timeBeginPeriod(1);											// ?イ??の精度を1msにする
+	DWORD dwLastTickR = 0;									// 最後の更新時刻を?ロとする
 	
 	IDirect3DDevice9* pd3dDevice = NULL;
 
@@ -5856,7 +5856,7 @@ HRESULT DXMyFrameLoop( DWORD dwRunRate, HACCEL hAccel )
 		DWORD dwNowTick = timeGetTime();					// 現在時刻の取得
 		//>> Frame move
 		if (dwNowTick - dwLastTickR >= dwRunRate)
-		{													// 指定時間異常経過ならゲーム処理開始
+		{													// 指定時間異常経過ならゲ??処理開始
 			dwLastTickR = dwNowTick;						// 現在の時間を最後に更新した時間として
 
 			// Animate the scene by calling the app's frame move callback
@@ -5886,7 +5886,7 @@ HRESULT DXMyFrameLoop( DWORD dwRunRate, HACCEL hAccel )
     if( hAccel != NULL )
         DestroyAcceleratorTable( hAccel );
 
-	timeEndPeriod(1);										// タイマーの精度を戻す
+	timeEndPeriod(1);										// ?イ??の精度を戻す
 
     GetDXUTState().SetInsideFrameloop( false );
 	if (!GetDXUTState().GetInsideDrawloop())

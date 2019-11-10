@@ -70,6 +70,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)..\</OutDir>
@@ -159,7 +161,19 @@
   <ItemGroup>
     <ClInclude Include="LuaHelper.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\project\packages\lua.redist.5.3.5.1\build\native\lua.redist.targets" Condition="Exists('..\project\packages\lua.redist.5.3.5.1\build\native\lua.redist.targets')" />
+    <Import Project="..\project\packages\lua.5.3.5.1\build\native\lua.targets" Condition="Exists('..\project\packages\lua.5.3.5.1\build\native\lua.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\project\packages\lua.redist.5.3.5.1\build\native\lua.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\project\packages\lua.redist.5.3.5.1\build\native\lua.redist.targets'))" />
+    <Error Condition="!Exists('..\project\packages\lua.5.3.5.1\build\native\lua.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\project\packages\lua.5.3.5.1\build\native\lua.targets'))" />
+  </Target>
 </Project>

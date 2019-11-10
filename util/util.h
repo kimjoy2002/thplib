@@ -42,7 +42,7 @@
 #include <map>
 #include <string>
 
-/* パケットエンドマーカー */
+/* パケットエンド??カ? */
 #define PEND 0xC8D1
 
 //当たり判定
@@ -53,8 +53,8 @@
 #define		D_PI						3.14159265358979323846
 #define		DegreeToRadian( degree ) ((degree) * (D_PI / 180.0))
 #define		RadianToDegree( radian ) ((radian) * (180.0 / D_PI))
-// 汎用操作
-// FLOATをDWORD引数に詰め込むヘルパー機能
+// 汎用?作
+// FLOATをDWORD引数に詰め込むヘルパ???
 inline DWORD FtoDW( FLOAT f )		{ return *((DWORD*)&f);	}
 inline float DWtoF( DWORD n )		{ return *(float*)&n;			}
 inline float MaxFloat()					{ DWtoF(0x7f7fffff);			}
@@ -79,7 +79,7 @@ inline int GetAngle(double x,double y)
 	if (y<0) /* θ＞πの時 */
 	  s=360-s;
 
-	deg=(int)floor(s+0.5);/*小数点を四捨五入*/
+	deg=(int)floor(s+0.5);/*小数?を四捨五入*/
 	return deg; /*角度θを返す*/
 };
 
@@ -94,7 +94,7 @@ inline float GetAnglef(float x,float y)
 	if (y<0.0f) /* θ＞πの時 */
 	  s=360.0f-s;
 
-//	deg=floorf((float)(s+0.5));/*小数点を四捨五入*/
+//	deg=floorf((float)(s+0.5));/*小数?を四捨五入*/
 //	return deg; /*角度θを返す*/
 	return s; /*角度θを返す*/
 };
@@ -110,7 +110,7 @@ inline double GetAngled(double x,double y)
 	if (y<0) /* θ＞πの時 */
 	  s=360-s;
 
-//	deg=floor(s+0.5);/*小数点を四捨五入*/
+//	deg=floor(s+0.5);/*小数?を四捨五入*/
 //	return deg; /*角度θを返す*/
 	return s; /*角度θを返す*/
 };
@@ -188,8 +188,8 @@ inline void SetUnitVec(D3DXVECTOR2* pOutVec, double dRad)
 #endif
 
 #ifdef _DEBUG
-#include "dxerr9.h"
-#pragma comment(lib, "dxerr9.lib")
+#include "dxerr.h"
+#pragma comment(lib, "dxerr.lib")
 // np = new a;	OutputString << msg
 #define DEBUG_NEW(np, a, msg)	{ADD_DEBUG_NEW(np, a,msg);}	//DXTRACE_MSG( L"@call new (" ## _T( # a) ## L") : " ## msg);
 // delete d;	OutputString << msg
@@ -314,8 +314,8 @@ BOOL LPTSTRToPCHARW(char** ppszDestChar, TCHAR* pszSrcTchar);
 */
 BOOL LPTSTRToPCHARA(char** ppszDestChar, char* pszSrcTchar);
 // -------------------------------------------------------------------
-// [テンプレート] 安全にオブジェクトを削除する
-// in:	削除するオブジェクトポインタ(配列を除く)
+// [テンプレ?ト] 安全にオブジェクトを削除する
+// in:	削除するオブジェクト?イン?(配列を除く)
 // -------------------------------------------------------------------
 
 INT ConvertUTF8toSJIS( BYTE* pSource, BYTE* pDist, int* pSize );
@@ -531,25 +531,25 @@ inline INT SetMultiByteData(BYTE* data,const BYTE* mb, INT size, INT max)
 	SafeMemCopy(data, mb, size, max);
 	return size;
 };
-// data:NULL無しで、頭にサイズ情報のあるデータから文字列をコピーする(NULL終端付加あり)
+// data:NULL無しで、頭にサイズ情報のあるデ??から文字列をコピ?する(NULL終?付加あり)
 // 戻り値：文字数(BYTE)
-// maxstr: 転送先Maxバッファ(BYTE)
-// maxsrc: 転送元Maxバッファ(BYTE)
+// maxstr: ?送先Maxバッフ?(BYTE)
+// maxsrc: ?送元Maxバッフ?(BYTE)
 int DecodeSizeStrFromRaw(LPWSTR dest_str, BYTE* src_data, int maxstr, int maxsrc);
 
 // ディレクトリ有無
 BOOL IsDirPathW(const WCHAR* path);
 BOOL IsDirPathA(const char* path);
-// ファイル有無
+// フ?イル有無
 BOOL IsFilePathW(const WCHAR* path);
 BOOL IsFilePathA(const char* path);
 
 // N進数に変換
-// ret				:各桁を格納して返す
+// ret				:各桁を格?して返す
 // carry_num		:retの配列数
 // value			:値
 // base				:進数
-// return			:桁あふれしてないか(ループしてあまった数値)
+// return			:桁あふれしてないか(ル?プしてあまった数値)
 inline int DigitConvert(int *ret, int carry_num, int value, int base)
 {
 	do
@@ -574,10 +574,10 @@ int GetWordNumA(const char* wd);
 int CStringToWString(WCHAR* dest_wstr, char* src_str, int dest_size=0);
 
 /* =================================== */
-/* =====        クラス定義       ===== */
+/* =====        クラス定?       ===== */
 /* =================================== */
 
-// ==XYZ型== //
+// ==XYZ?== //
 class XYZ
 {
 public:
@@ -638,7 +638,7 @@ public:
 };
 
 //==============================================================
-// CTextFileクラス：テキストファイルを文字列を読み出す
+// CTextFileクラス：テキストフ?イルを文字列を読み出す
 #define MAX_CHAR	(1024)
 
 class CTextFile {
@@ -678,7 +678,7 @@ public:
 };
 
 //==============================================================
-// CTextFileクラス：暗号化機能を入り。テキストファイルを文字列を読み出す
+// CTextFileクラス：暗号化??を入り。テキストフ?イルを文字列を読み出す
 // Code
 class CCodeTextFile : public CTextFile
 {
@@ -700,7 +700,7 @@ class AutoArray {
 		AutoArray(size_t n) 
 		{ 
 #ifdef _DEBUG 
-			// バッファオーバーランのチェックのため、 余計にひとつアロケート 
+			// バッフ?オ?バ?ランの?ェックのため、 ?計にひとつアロケ?ト 
 			m_ptr = new T[n + 1]; 
 #else 
 			m_ptr = new T[n]; 
@@ -723,7 +723,7 @@ class AutoArray {
 		if (m_ptr) { 
 			PBYTE pb = reinterpret_cast<PBYTE>(&m_ptr[m_size]); 
 			ASSERT(pb); 
-			// バッファオーバーランのチェック 
+			// バッフ?オ?バ?ランの?ェック 
 			for (int i = 0; i < sizeof m_ptr[m_size]; ++i) { 
 				ASSERT(pb[i] == SENTINEL); 
 			} 
@@ -787,7 +787,7 @@ private:
 
 };
 
-// テクスチャ配列クラス
+// テクス?ャ配列クラス
 class CSpTexs
 {
 public:
@@ -859,7 +859,7 @@ void GetModuleDirW(WCHAR* path, int nSize);
 #endif
 inline double roundA( double val, int precision )
 {
-    /* ***** 内部変数定義 ***** */
+    /* ***** 内部変数定? ***** */
     double    ret;
     char    buf[64] = {'\0'};
     char    *p;
@@ -872,7 +872,7 @@ inline double roundA( double val, int precision )
 
 inline double roundW( double val, int precision )
 {
-    /* ***** 内部変数定義 ***** */
+    /* ***** 内部変数定? ***** */
     double    ret;
     WCHAR    buf[64] = {L'\0'};
     WCHAR    *p;

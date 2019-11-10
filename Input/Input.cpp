@@ -55,43 +55,43 @@ BOOL CInput::Create(HINSTANCE hInst, HWND hwndApp, BOOL bJoyPad, BOOL bKeybd, in
 		bRes = CreateJoystick(hwndApp);
 		if (bRes)
 		{
-			//モードを設定（フォアグラウンド＆非排他モード）
+			//モ?ドを設定（フォアグラウンド＆非排他モ?ド）
 			hr = pDIJoyDevice->SetCooperativeLevel(hwndApp, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("フォアグラウンド＆非排他モードの設定に失敗", hr);
+//		DXTRACE_ERR("フォアグラウンド＆非排他モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// コールバック関数を使って各軸のモードを設定
+			// コ?ルバック関数を使って各軸のモ?ドを設定
 			hr = pDIJoyDevice->EnumObjects(EnumAxesCallback, this, DIDFT_AXIS);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("軸モードの設定に失敗", hr);
+//		DXTRACE_ERR("軸モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// 軸モードを設定（絶対値モードに設定。デフォルトなので必ずしも設定は必要ない）
+			// 軸モ?ドを設定（絶対値モ?ドに設定。デフォルトなので必ずしも設定は必要ない）
 			DIPROPDWORD diprop;
 			diprop.diph.dwSize	= sizeof(diprop); 
 			diprop.diph.dwHeaderSize	= sizeof(diprop.diph); 
 			diprop.diph.dwObj	= 0;
 			diprop.diph.dwHow	= DIPH_DEVICE;
 			diprop.dwData		= DIPROPAXISMODE_ABS;
-//	diprop.dwData		= DIPROPAXISMODE_REL;	// 相対値モードの場合
+//	diprop.dwData		= DIPROPAXISMODE_REL;	// 相対値モ?ドの場合
 			hr = pDIJoyDevice->SetProperty(DIPROP_AXISMODE, &diprop.diph);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("軸モードの設定に失敗", hr);
+//		DXTRACE_ERR("軸モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// バッファリング・データを取得するため、バッファ・サイズを設定
+			// バッフ?リング・デ??を取得するため、バッフ?・サイズを設定
 			diprop.dwData = DIDEVICE_BUFFERSIZE;
 			hr = pDIJoyDevice->SetProperty(DIPROP_BUFFERSIZE, &diprop.diph);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("バッファ・サイズの設定に失敗", hr);
+//		DXTRACE_ERR("バッフ?・サイズの設定に失敗", hr);
 				return false;
 			}
 
@@ -108,43 +108,43 @@ BOOL CInput::Create(HINSTANCE hInst, HWND hwndApp, BOOL bJoyPad, BOOL bKeybd, in
 		bRes = CreateKeyboard(hwndApp);
 		if (bRes)
 		{
-			//モードを設定（フォアグラウンド＆非排他モード）
+			//モ?ドを設定（フォアグラウンド＆非排他モ?ド）
 			hr = pDIKeyDevice->SetCooperativeLevel(hwndApp, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("フォアグラウンド＆非排他モードの設定に失敗", hr);
+//		DXTRACE_ERR("フォアグラウンド＆非排他モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// コールバック関数を使って各軸のモードを設定
+			// コ?ルバック関数を使って各軸のモ?ドを設定
 			hr = pDIKeyDevice->EnumObjects(EnumAxesCallback, this, DIDFT_AXIS);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("軸モードの設定に失敗", hr);
+//		DXTRACE_ERR("軸モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// 軸モードを設定（絶対値モードに設定。デフォルトなので必ずしも設定は必要ない）
+			// 軸モ?ドを設定（絶対値モ?ドに設定。デフォルトなので必ずしも設定は必要ない）
 			DIPROPDWORD diprop;
 			diprop.diph.dwSize	= sizeof(diprop); 
 			diprop.diph.dwHeaderSize	= sizeof(diprop.diph); 
 			diprop.diph.dwObj	= 0;
 			diprop.diph.dwHow	= DIPH_DEVICE;
 			diprop.dwData		= DIPROPAXISMODE_ABS;
-//	diprop.dwData		= DIPROPAXISMODE_REL;	// 相対値モードの場合
+//	diprop.dwData		= DIPROPAXISMODE_REL;	// 相対値モ?ドの場合
 			hr = pDIKeyDevice->SetProperty(DIPROP_AXISMODE, &diprop.diph);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("軸モードの設定に失敗", hr);
+//		DXTRACE_ERR("軸モ?ドの設定に失敗", hr);
 				return false;
 			}
 
-			// バッファリング・データを取得するため、バッファ・サイズを設定
+			// バッフ?リング・デ??を取得するため、バッフ?・サイズを設定
 			diprop.dwData = DIDEVICE_BUFFERSIZE;
 			hr = pDIKeyDevice->SetProperty(DIPROP_BUFFERSIZE, &diprop.diph);
 			if (FAILED(hr))
 			{
-//		DXTRACE_ERR("バッファ・サイズの設定に失敗", hr);
+//		DXTRACE_ERR("バッフ?・サイズの設定に失敗", hr);
 				return false;
 			}
 
@@ -179,11 +179,11 @@ BOOL CInput::CreateJoystick(HWND hwndApp)
 		return false;
 	}
 
-	// データ形式を設定
+	// デ???式を設定
 	hr = pDIJoyDevice->SetDataFormat(&c_dfDIJoystick2);
 	if (FAILED(hr))
 	{
-//		DXTRACE_ERR("c_dfDIJoystick2形式の設定に失敗", hr);
+//		DXTRACE_ERR("c_dfDIJoystick2?式の設定に失敗", hr);
 		return false;
 	}
 
@@ -196,7 +196,7 @@ BOOL CInput::CreateKeyboard(HWND hwndApp)
 {
 	HRESULT hr;
 	// *****************************************
-	// キーボードの作成
+	// キ???ドの作成
 
 	// デバイス・オブジェクトを作成
 	hr = pDInput->CreateDevice(GUID_SysKeyboard, &pDIKeyDevice, NULL); 
@@ -205,11 +205,11 @@ BOOL CInput::CreateKeyboard(HWND hwndApp)
 	    return false;
 	}
 
-	// データ形式を設定
+	// デ???式を設定
 	hr = pDIKeyDevice->SetDataFormat(&c_dfDIKeyboard);
 	if (FAILED(hr))
 	{
-//		DXTRACE_ERR("c_dfDIMouse2形式の設定に失敗", hr);
+//		DXTRACE_ERR("c_dfDIMouse2?式の設定に失敗", hr);
 		return false;
 	}
 
@@ -222,17 +222,17 @@ BOOL CInput::EnumJoysticks(const DIDEVICEINSTANCE* pdidInstance, VOID* pContext)
 	HRESULT hr;
 	CInput*	pInput = (CInput*)pContext;
 	LPDIRECTINPUT8 pDirectInput = pInput->GetDirectInput();
-	// 列挙されたジョイスティックへのインターフェイスを取得する。
+	// 列挙されたジョイスティックへのイン??フェイスを取得する。
 	hr = pDirectInput->CreateDevice(pdidInstance->guidInstance, &pDIJoyDevice, NULL);
 	if (FAILED(hr)) 
 		return DIENUM_CONTINUE;
 
-	// ジョイスティックの能力を調べる
+	// ジョイスティックの?力を調べる
 	diDevCaps.dwSize = sizeof(DIDEVCAPS);
 	hr = pDIJoyDevice->GetCapabilities(&diDevCaps);
 	if (FAILED(hr))
 	{
-		// ジョイスティック能力の取得に失敗
+		// ジョイスティック?力の取得に失敗
 		SafeRelease(pDIJoyDevice);
 		return DIENUM_CONTINUE;
 	}
@@ -244,7 +244,7 @@ BOOL CInput::EnumAxes(LPCDIDEVICEOBJECTINSTANCE lpddoi, LPVOID pvRef)
 {
 	HRESULT hr;
 
-	// 軸の値の範囲を設定（-1000～1000）
+	// 軸の値の範囲を設定（-1000?1000）
 	DIPROPRANGE diprg;
 	ZeroMemory(&diprg, sizeof(diprg));
 	diprg.diph.dwSize	= sizeof(diprg); 
@@ -301,7 +301,7 @@ BOOL CInput::UpdateJoyState()
 	{
 		HRESULT hr;
 
-		// デバイスの直接データを取得する
+		// デバイスの直接デ??を取得する
 		hr = pDIJoyDevice->Poll();
 		if (FAILED(hr))
 		{
@@ -324,7 +324,7 @@ BOOL CInput::UpdateKeyState()
 	{
 		HRESULT hr;
 
-		// デバイスの直接データを取得する
+		// デバイスの直接デ??を取得する
 		hr = pDIKeyDevice->Poll();
 		if (FAILED(hr))
 		{
@@ -356,7 +356,7 @@ DWORD CInput::UpdateObjData(LPDIRECTINPUTDEVICE8 pDIDev)
 
 
 // -------------------------------------------------------------------
-// ゲームコントロール・クラス
+// ゲ??コントロ?ル・クラス
 // -------------------------------------------------------------------
 CGameControl::CGameControl():CInput()
 {
@@ -432,7 +432,7 @@ BOOL CGameControl::UpdateState()
 		{
 			if (diKeyState[i] & 0x80)
 			{
-				// 十字
+				// ?字
 				if (i == trKeyCode.up)
 					tInState.lY = -nContOnMin;
 				else if(i == trKeyCode.down)
@@ -677,7 +677,7 @@ void CGameControl::OnReset()
 		// Update the dialog text 
 		if( hr == DIERR_OTHERAPPHASPRIO || 
 			hr == DIERR_NOTACQUIRED ) 
-			OutputDebugStr(TEXT("Unacquired") );
+			OutputDebugString(TEXT("Unacquired") );
 	}
 	if (pDIKeyDevice)
 	{
@@ -687,7 +687,7 @@ void CGameControl::OnReset()
 		// Update the dialog text 
 		if( hr == DIERR_OTHERAPPHASPRIO || 
 			hr == DIERR_NOTACQUIRED ) 
-			OutputDebugStr(TEXT("Unacquired") );
+			OutputDebugString(TEXT("Unacquired") );
 	}
 	bCreated = TRUE;
 }

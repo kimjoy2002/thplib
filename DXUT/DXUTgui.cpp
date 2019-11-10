@@ -4414,9 +4414,9 @@ bool CDXUTSlider::HandleMouse( UINT uMsg, POINT pt, WPARAM wParam, LPARAM lParam
             {
                 m_nDragX = pt.x;
                 m_nDragOffset = 0;
-//> mod スライダーがつまみ以外をクリックしたままマウスを動かすと最大に移動する
+//> mod スライ??がつまみ以外をクリックしたまま?ウスを動かすと最大に移動する
 //                m_bPressed = true;
-//< mod スライダーがつまみ以外をクリックしたままマウスを動かすと最大に移動する
+//< mod スライ??がつまみ以外をクリックしたまま?ウスを動かすと最大に移動する
                 if( !m_bHasFocus )
                     m_pDialog->RequestFocus( this );
 
@@ -5789,7 +5789,7 @@ void CDXUTColorListBox::Render( IDirect3DDevice9* pd3dDevice, float fElapsedTime
 				rcDraw.right = rcDraw.left+(pColorElement->rcTexture.right-pColorElement->rcTexture.left);
 				rcDraw.bottom = rc.top+(pColorElement->rcTexture.bottom-pColorElement->rcTexture.top);
 				CopyRect(&rcTxt, &rc);
-				// 真ん中に配置
+				// ?ん中に配置
 				int nDrawHeight = (pColorElement->rcTexture.bottom-pColorElement->rcTexture.top);
 				int nTextHeight = (rc.bottom-rc.top);
 				if ( nTextHeight < nDrawHeight )
@@ -8488,7 +8488,7 @@ void CDXUTIMEEditBox::Render( IDirect3DDevice9* pd3dDevice, float fElapsedTime )
         s_CompString.SetFontNode( m_pDialog->GetFont( pElement->iFont ) );
         s_CandList.HoriCand.SetFontNode( m_pDialog->GetFont( pElement->iFont ) );
     }
-//> mod 常に右のボタン[あ]を表示させる
+//> mod 常に右の??ン[あ]を?示させる
         // Render the input locale indicator
         RenderIndicator( pd3dDevice, fElapsedTime );
 //< mod
@@ -8497,7 +8497,7 @@ void CDXUTIMEEditBox::Render( IDirect3DDevice9* pd3dDevice, float fElapsedTime )
     //
     if( m_bHasFocus )
     {
-//> mod 常に右のボタン[あ]を表示させる
+//> mod 常に右の??ン[あ]を?示させる
         // Render the input locale indicator
 //        RenderIndicator( pd3dDevice, fElapsedTime );
 //< mod
@@ -9273,7 +9273,7 @@ void CDXUTAngleLine::SetAngle(int x,int y)
 	s=(s/D3DX_PI)*180.0; /* ラジアンを度に変換 */
 	if (dy<0)	  s=360-s; /* θ＞πの時 */
 
-	deg=(int)floor(s+0.5);/*小数点を四捨五入*/
+	deg=(int)floor(s+0.5);/*小数?を四捨五入*/
 	m_nAngle = deg; /*角度θを返す*/
 
 	UpdateRects();

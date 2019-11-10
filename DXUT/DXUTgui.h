@@ -1433,7 +1433,7 @@ public:
     virtual void RenderCandidateReadingWindow( IDirect3DDevice9* pd3dDevice, float fElapsedTime, bool bReading );
     virtual void RenderComposition( IDirect3DDevice9* pd3dDevice, float fElapsedTime );
     virtual void RenderIndicator( IDirect3DDevice9* pd3dDevice, float fElapsedTime );
-//> mod インジケーターの色を設定できるようにする
+//> mod インジケ???の色を設定できるようにする
 	inline void SetIndicatorImeColor(D3DCOLOR value) { m_IndicatorImeColor = value;	};
 	inline void SetIndicatorEngColor(D3DCOLOR value) { m_IndicatorEngColor = value;	};
 	inline void SetIndicatorBkColor(D3DCOLOR value) { m_IndicatorBkColor = value;	};

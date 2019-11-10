@@ -44,7 +44,7 @@ typedef struct TPNG_IMAGE
 class PngLoader
 {
 public:
-	// メモリからオープン
+	// メモリからオ?プン
 	// dest_data			: out image data
 	// dest_data_lines	: out image data lines pointer
 	// src_buff				: buffer
@@ -53,7 +53,7 @@ public:
 	// height				: out png_height
 	static BOOL PngLoadFromFileInMemory(DWORD** dest_data, DWORD*** dest_data_lines, BYTE* src_buff, UINT size, int* width, int* height);
 
-	// メモリからオープン
+	// メモリからオ?プン
 	// dest_data			: out image data
 	// dest_data_lines	: out image data lines pointer
 	// pfiler					: filer
@@ -61,7 +61,7 @@ public:
 	// height				: out png_height
 	static BOOL PngLoadFromFileInMemory(DWORD** dest_data, DWORD*** dest_data_lines, WCHAR* src_path, CFiler *pfiler, int* width, int* height);
 
-	// メモリからオープン
+	// メモリからオ?プン
 	// dest_image		: out image data
 	// pfiler					: filer
 	// width					: out png_width
@@ -69,10 +69,10 @@ public:
 	static BOOL PngLoadFromFileInMemory(TPngImage* dest_image, WCHAR* src_path, CFiler *pfiler);
 
 		
-	// PngLoaderを使ってメモリからテクスチャを作成
+	// PngLoaderを使ってメモリからテクス?ャを作成
 	// pDev					: device
 	// src_buff				: filer
-	// size					: バッファサイズ
+	// size					: バッフ?サイズ
 	// width					: out png_width
 	// height				: out png_height
 	// ppCreatedTexture: out image data
