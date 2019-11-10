@@ -109,7 +109,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\project\packages\libogg.redist.1.3.0.1\build\native\libogg.redist.targets" Condition="Exists('..\project\packages\libogg.redist.1.3.0.1\build\native\libogg.redist.targets')" />
-    <Import Project="..\project\packages\libogg.1.3.0.1\build\native\libogg.targets" Condition="Exists('..\project\packages\libogg.1.3.0.1\build\native\libogg.targets')" />
+    <Import Project="packages\libogg.1.3.0.1\build\native\libogg.targets" Condition="Exists('packages\libogg.1.3.0.1\build\native\libogg.targets')" />
   </ImportGroup>
 </Project>
