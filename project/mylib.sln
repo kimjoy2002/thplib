@@ -1,52 +1,35 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "..\util\util.vcproj", "{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "..\util\util.vcxproj", "{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Window", "..\Window\Window.vcproj", "{A8AA3434-533D-48A3-AF0D-F8F39E51A915}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Window", "..\Window\Window.vcxproj", "{A8AA3434-533D-48A3-AF0D-F8F39E51A915}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Input", "..\Input\Input.vcproj", "{A448B900-3D88-412B-B877-DBDBBB669EDF}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Input", "..\Input\Input.vcxproj", "{A448B900-3D88-412B-B877-DBDBBB669EDF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXUT", "..\DXUT\DXUT.vcproj", "{86F1F53F-4875-4952-8A61-AB4DFD0985A6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXUT", "..\DXUT\DXUT.vcxproj", "{86F1F53F-4875-4952-8A61-AB4DFD0985A6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureLoader", "..\TextureLoader\TextureLoader.vcproj", "{8B713E30-0E5C-4AE5-9567-AC5E906FBB66}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureLoader", "..\TextureLoader\TextureLoader.vcxproj", "{8B713E30-0E5C-4AE5-9567-AC5E906FBB66}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PngLoader", "..\PngLoader\PngLoader.vcproj", "{2E6FF54D-10C5-4C45-B655-1FC0C26C7AE3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{00473014-1114-46AF-A3BC-40D14ECF9501} = {00473014-1114-46AF-A3BC-40D14ECF9501}
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PngLoader", "..\PngLoader\PngLoader.vcxproj", "{2E6FF54D-10C5-4C45-B655-1FC0C26C7AE3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseVector", "..\BaseVector\BaseVector.vcproj", "{63FF97E8-92B7-4F14-A97E-5941CDA5892B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseVector", "..\BaseVector\BaseVector.vcxproj", "{63FF97E8-92B7-4F14-A97E-5941CDA5892B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkageList", "..\LinkageList\LinkageList.vcproj", "{EDA7CA89-47AC-4A5D-8D70-105F2467A270}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkageList", "..\LinkageList\LinkageList.vcxproj", "{EDA7CA89-47AC-4A5D-8D70-105F2467A270}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoundLib", "..\SoundLib\SoundLib.vcproj", "{71E1F728-8D70-4ED3-9577-630B8D59184F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoundLib", "..\SoundLib\SoundLib.vcxproj", "{71E1F728-8D70-4ED3-9577-630B8D59184F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaHelper", "..\LuaHelper\LuaHelper.vcproj", "{0CE12956-75CD-4878-AF34-771EF39174AB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaHelper", "..\LuaHelper\LuaHelper.vcxproj", "{0CE12956-75CD-4878-AF34-771EF39174AB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CArchiver", "..\CArchiver\CArchiver.vcproj", "{F00F0BDD-AB8D-4019-80C7-58AFF6C9F753}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A} = {D8B64AC5-8DB1-4FD2-8B2B-AA79A5BDA92A}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CArchiver", "..\CArchiver\CArchiver.vcxproj", "{F00F0BDD-AB8D-4019-80C7-58AFF6C9F753}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PacketHelper", "..\PacketHelper\PacketHelper.vcproj", "{2A2057A8-789A-4824-A073-5A5869B25FB1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PacketHelper", "..\PacketHelper\PacketHelper.vcxproj", "{2A2057A8-789A-4824-A073-5A5869B25FB1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IniFile", "..\IniFile\IniFile.vcproj", "{DE6507E9-7FED-4487-9FF9-B257DEBB079D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IniFile", "..\IniFile\IniFile.vcxproj", "{DE6507E9-7FED-4487-9FF9-B257DEBB079D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Filer", "..\Filer\Filer.vcproj", "{00473014-1114-46AF-A3BC-40D14ECF9501}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Filer", "..\Filer\Filer.vcxproj", "{00473014-1114-46AF-A3BC-40D14ECF9501}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -345,5 +328,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8851A8D1-4AAB-42C9-AFDC-876994330445}
 	EndGlobalSection
 EndGlobal

@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{86F1F53F-4875-4952-8A61-AB4DFD0985A6}</ProjectGuid>
-    <RootNamespace>DXUT</RootNamespace>
+    <ProjectGuid>{71E1F728-8D70-4ED3-9577-630B8D59184F}</ProjectGuid>
+    <RootNamespace>SoundLib</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -40,14 +40,14 @@
     <_ProjectFileVersion>16.0.28916.169</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\</OutDir>
+    <OutDir>$(SolutionDir)..\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\</OutDir>
+    <OutDir>$(SolutionDir)..\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
@@ -56,11 +56,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(TargetDir)util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(TargetDir)util;$(TargetDir)DXUT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
@@ -72,35 +72,35 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(TargetDir)util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(TargetDir)util;$(TargetDir)DXUT;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;NDEBUG;_NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dxstdafx.cpp" />
-    <ClCompile Include="DXUT.cpp" />
-    <ClCompile Include="DXUTenum.cpp" />
-    <ClCompile Include="DXUTgui.cpp" />
-    <ClCompile Include="DXUTMesh.cpp" />
-    <ClCompile Include="DXUTmisc.cpp" />
-    <ClCompile Include="DXUTRes.cpp" />
-    <ClCompile Include="DXUTSettingsDlg.cpp" />
-    <ClCompile Include="DXUTsound.cpp" />
+    <ClCompile Include="..\..\..\..\..\lib\wuvorbisfile\lib\wuvorbisfile.c" />
+    <ClCompile Include="COggDecoder.cpp" />
+    <ClCompile Include="CSoundBuffer.cpp" />
+    <ClCompile Include="CSoundLibraries.cpp" />
+    <ClCompile Include="CSoundPlayer.cpp" />
+    <ClCompile Include="CWaveData.cpp" />
+    <ClCompile Include="CWuVorbisDecoder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dxstdafx.h" />
-    <ClInclude Include="DXUT.h" />
-    <ClInclude Include="DXUTenum.h" />
-    <ClInclude Include="DXUTgui.h" />
-    <ClInclude Include="DXUTMesh.h" />
-    <ClInclude Include="DXUTmisc.h" />
-    <ClInclude Include="DXUTRes.h" />
-    <ClInclude Include="DXUTSettingsDlg.h" />
-    <ClInclude Include="DXUTsound.h" />
+    <ClInclude Include="..\..\..\..\..\lib\wuvorbisfile\include\wuvorbisfile.h" />
+    <ClInclude Include="COggDecoder.h" />
+    <ClInclude Include="CSoundBuffer.h" />
+    <ClInclude Include="CSoundLibraries.h" />
+    <ClInclude Include="CSoundPlayer.h" />
+    <ClInclude Include="CWaveData.h" />
+    <ClInclude Include="CWuVorbisDecoder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

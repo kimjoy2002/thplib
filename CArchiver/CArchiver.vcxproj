@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{86F1F53F-4875-4952-8A61-AB4DFD0985A6}</ProjectGuid>
-    <RootNamespace>DXUT</RootNamespace>
+    <ProjectGuid>{F00F0BDD-AB8D-4019-80C7-58AFF6C9F753}</ProjectGuid>
+    <RootNamespace>CArchiver</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -57,10 +57,10 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(TargetDir)util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
@@ -75,32 +75,21 @@
       <AdditionalIncludeDirectories>$(TargetDir)util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderFile>dxstdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dxstdafx.cpp" />
-    <ClCompile Include="DXUT.cpp" />
-    <ClCompile Include="DXUTenum.cpp" />
-    <ClCompile Include="DXUTgui.cpp" />
-    <ClCompile Include="DXUTMesh.cpp" />
-    <ClCompile Include="DXUTmisc.cpp" />
-    <ClCompile Include="DXUTRes.cpp" />
-    <ClCompile Include="DXUTSettingsDlg.cpp" />
-    <ClCompile Include="DXUTsound.cpp" />
+    <ClCompile Include="CArchiver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dxstdafx.h" />
-    <ClInclude Include="DXUT.h" />
-    <ClInclude Include="DXUTenum.h" />
-    <ClInclude Include="DXUTgui.h" />
-    <ClInclude Include="DXUTMesh.h" />
-    <ClInclude Include="DXUTmisc.h" />
-    <ClInclude Include="DXUTRes.h" />
-    <ClInclude Include="DXUTSettingsDlg.h" />
-    <ClInclude Include="DXUTsound.h" />
+    <ClInclude Include="CArchiver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\util\util.vcxproj">
+      <Project>{d8b64ac5-8db1-4fd2-8b2b-aa79a5bda92a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
