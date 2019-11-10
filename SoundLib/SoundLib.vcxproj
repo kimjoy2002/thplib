@@ -87,7 +87,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\lib\wuvorbisfile\lib\wuvorbisfile.c" />
+    <ClCompile Include="wuvorbisfile.c" />
     <ClCompile Include="COggDecoder.cpp" />
     <ClCompile Include="CSoundBuffer.cpp" />
     <ClCompile Include="CSoundLibraries.cpp" />
@@ -96,7 +96,7 @@
     <ClCompile Include="CWuVorbisDecoder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\lib\wuvorbisfile\include\wuvorbisfile.h" />
+    <ClInclude Include="wuvorbisfile.h" />
     <ClInclude Include="COggDecoder.h" />
     <ClInclude Include="CSoundBuffer.h" />
     <ClInclude Include="CSoundLibraries.h" />
