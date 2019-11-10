@@ -168,7 +168,4 @@
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\lua.5.3.5.1\build\native\lua.targets" Condition="Exists('packages\lua.5.3.5.1\build\native\lua.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <Error Condition="!Exists('packages\lua.5.3.5.1\build\native\lua.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\lua.5.3.5.1\build\native\lua.targets'))" />
-  </Target>
 </Project>
